@@ -1,0 +1,10 @@
+
+languages/informal/woocommerce-de_DE.mo
+
+*.po
+
+*.mo
+
+.DS_Store
+
+logs/paypal.txt
