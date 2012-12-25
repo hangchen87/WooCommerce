@@ -280,7 +280,7 @@ if ( ! function_exists( 'woocommerce_settings' ) ) {
 							$links = array( '<a href="#payment-gateways">'.__('Payment Gateways', 'woocommerce').'</a>' );
 
 			            	foreach ( $woocommerce->payment_gateways->payment_gateways() as $gateway ) :
-			            		$title = empty( $gateway->method_title ) ? ( $gateway->id ) : ( $gateway->method_title );
+			            		$title = empty( $gateway->method_title ) ? ucwords( $gateway->id ) : ( $gateway->method_title );
 
 			            		$links[] = '<a href="#gateway-'.$gateway->id.'">'.$title.'</a>';
 							endforeach;
@@ -310,7 +310,7 @@ if ( ! function_exists( 'woocommerce_settings' ) ) {
 							$current_section = empty( $current_section ) ? key( $integrations ) : $current_section;
 
 							foreach ( $integrations as $integration ) {
-								$title = empty( $integration->method_title ) ? ucwords( $integration->id ) : ucwords( $integration->method_title );
+								$title = empty( $integration->method_title ) ? ucwords( $integration->id ) : ( $integration->method_title );
 
 								$current = ( $integration->id == $current_section ) ? 'class="current"' : '';
 
